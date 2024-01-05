@@ -18,7 +18,7 @@ namespace TestMVVM.ViewModels
         {
             #region Commands
 
-            //ExitApplicationCommand = new LambdaCommand(OnExitApplicationCommandExecuted, CanExitApplicationCommandExecute);
+            ExitApplicationCommand = new LambdaCommand(OnExitApplicationCommandExecuted, CanExitApplicationCommandExecute);
 
             #endregion Commands
         }
@@ -31,13 +31,13 @@ namespace TestMVVM.ViewModels
         /// <summary>
         /// Команда на закрытие приложения по пункту меню Exit
         /// </summary>
-        /*public ICommand ExitApplicationCommand { get; }
+        public ICommand ExitApplicationCommand { get; }
 
         private bool CanExitApplicationCommandExecute(object p) => true;
         private void OnExitApplicationCommandExecuted(object p)
         {
             Application.Current.Shutdown();
-        }*/
+        }
 
         #endregion ExitApplicationCommand 
 
