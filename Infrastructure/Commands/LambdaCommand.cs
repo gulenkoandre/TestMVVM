@@ -9,14 +9,6 @@ namespace TestMVVM.Infrastructure.Commands
 {
     internal class LambdaCommand : Command
     {
-        #region = Fields ==============================================================================================
-
-        private readonly Action<object> _execute;
-
-        private readonly Func<object, bool> _canExecute;
-
-        #endregion
-
         #region = Constructor =========================================================================================
         
         public LambdaCommand(Action<object> Execute, Func<object, bool> CanExecute = null)
@@ -32,7 +24,15 @@ namespace TestMVVM.Infrastructure.Commands
             _canExecute = CanExecute;
         }
 
-        #endregion
+        #endregion = Constructor =
+
+        #region = Fields ==============================================================================================
+
+        private readonly Action<object> _execute;
+
+        private readonly Func<object, bool> _canExecute;
+
+        #endregion = Fields =
 
         public override bool CanExecute(object parameter) =>_canExecute?.Invoke(parameter) ?? true; //даже если нет делегата, то считаем, что команду всек равно можно выполнить в любом случае (поэтому возвращаем true, даже если левый операнд null)
         
