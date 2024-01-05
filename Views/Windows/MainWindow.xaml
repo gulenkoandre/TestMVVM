@@ -7,6 +7,12 @@
         xmlns:local="clr-namespace:TestMVVM"
         mc:Ignorable="d"
         Title="{Binding Title}" Height="450" Width="800">
+    
+    <!--Назначаем на Ctrl+Q команду на закрытие приложения -->
+    <Window.InputBindings>
+        <KeyBinding Modifiers="Ctrl" Key="Q" Command="{Binding ExitApplicationCommand}"/>
+    </Window.InputBindings>
+        
     <Window.DataContext>
         <vm:MainWindowViewModel/>
     </Window.DataContext>
